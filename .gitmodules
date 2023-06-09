@@ -1,0 +1,3 @@
+[submodule "training"]
+    path = training
+	url = https://fukui1330.github.io/training/web-app2/doc/index.html
