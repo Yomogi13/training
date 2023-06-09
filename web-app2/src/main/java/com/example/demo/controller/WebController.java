@@ -6,8 +6,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
+/**
+ * 
+ * HPに関するコントローラクラスです
+ * 
+ *
+ */
 @Controller
 public class WebController {
+	
+	/**
+	 * 
+	 * @param model ビューに渡すモデルオブジェクト
+	 * @return index画面のHTMLファイル名
+	 */
 
 	@GetMapping(value = "/test/")
 	public String index(Model model) {
