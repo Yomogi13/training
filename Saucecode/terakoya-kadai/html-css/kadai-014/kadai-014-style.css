@@ -1,0 +1,29 @@
+body{
+    font-family: "Arial", "Meiryo","sans-serif";
+}    
+
+h1.google-fonts {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2em;
+    letter-spacing: 1.2em;
+    text-shadow: 2px 2px 2px blue;
+    border-bottom: solid 3px rgb(115, 115, 114);
+}
+
+.skyblue {
+    color: skyblue;
+    
+}
+
+.pink {
+    color: rgb(255, 0, 255); /* ピンクを指定 */
+}
+
+.decoration{
+    font-size: 20px;
+    text-align: center;
+}
+
+.decodiv {
+    font-weight: bold;
+}

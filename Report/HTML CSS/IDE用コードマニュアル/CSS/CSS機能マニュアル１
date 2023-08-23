@@ -1,0 +1,436 @@
+
+このファイルに記載されている内容
+decoration
+fontfamily
+fontstyle
+display
+width min max
+height min max
+box-model
+
+
+
+
+
+幅のauto 
+
+.parent {
+    width:auto;
+    background-color: aqua;
+}
+
+幅の最小値 
+
+.child {
+    width: 50%;
+    min-width: 300px;
+    background-color: brown;
+}
+
+幅の最大値 
+
+.parent {
+    width: 80%;
+    max-width: 600px;
+    background-color: brown
+}
+
+高さの最小値 最大値 
+
+.parent {
+    height: auto;
+    min-height: 100px;
+    max-height: 100px;
+}
+
+最大値最小値は指定した高さの数値によって高さや幅が決まる
+　 子要素の高さが指定した数値を越えるとと子要素がはみ出る 
+
+
+
+
+
+
+基本的なプロパティ
+
+
+color	文字色を指定する
+font-family	フォントの種類を指定する
+font-size	フォントの大きさを指定する
+font-weight	フォントの太さを指定する
+background	背景を指定する
+text-align	横方向の揃え方を指定する（左・右・中央）
+line-height	行の高さを指定する
+width	要素の幅を指定する
+height	要素の高さを指定する
+padding	要素のパディングを指定する
+margin	要素のマージンを指定する
+border	要素のボーダーの色や太さを指定する
+position	要素の配置方法を指定する
+display	要素の表示形式を指定する
+
+複数のプロパティを参照する
+
+・複数のプロパティを指定するには、以下のようにセミコロン;のあとに続けて書くだけです。
+
+例
+p {
+    color: red;
+    font-size: 48px;
+    text-align: right;
+  }
+
+  /* CSSのコメントアウト*/
+
+コメントアウトのショートカットキーは Ctrl+/
+
+CSSのコード内で使われる半角スペース・タブ・改行は、ブラウザ上の表示に影響しない
+全角スペースはNG
+
+
+
+
+
+decoration
+fontfamily
+fontstyle
+
+
+
+.decoration {
+     font-size: 60px; 
+}
+
+/* デコレーション色々 */
+
+ p{ ←セレクタ運用する対象「どこ」＝「今回はｐタグ」
+          color:red;
+          color=プロパティ「何を」=「今回は色を」
+          red=値 運用の仕方「どうする」=「赤にする」
+          
+          CSSは上記のようにセレクタ、プロパティ、値の３つを書く
+
+          セレクタ：スタイルを適用する場所
+          プロパティ：適用するスタイルの内容
+          値：スタイルの適用の仕方
+
+          CSSにおける大きさの単位
+
+          「px パソコンやスマホの画面を構成する最小単位のこと」
+
+          メリット：画面幅やデバイスに関係なく大きさを固定したいときに便利
+          デメリット：大きさが固定なので、レスポンシブデザインには不向き
+
+          「em 親要素のフォントサイズを１とする単位、つまり同じ1emでも親要素のフォントサイズによって大きさが変わる」
+
+          例えば親要素のフォントサイズが16pxであれば「1em=16px」になり、親要素のフォントサイズが12pxであれば
+          1em＝12pxになる
+
+          メリット：サイズが相対的に変わるので、レスポンシブデザインに向いている
+          デメリット：親・子・孫要素といった入れ子状態で各要素にemを使うと計算が複雑になる
+
+          「rem emが親要素のフォントサイズを基準とするのに対し、remはルート要素のフォントサイズを基準とする」
+          ルート要素とは、そのファイルにおける最上位の親要素のことで、他のすべての要素を囲んでいます。HTMLファイルにおけるルート要素はhtml要素
+
+          rem＝root emの略で「root（根本、ルート）のem」という意味
+
+          「％　親要素の大きさを基準として割合を指定する」
+          親要素が16pxのとき、50%を指定すれば8pxになり、200%を指定すれば32pxになります
+
+          「vw Viewport Widthの略で、ビューポート（Webサイトの表示領域）の横幅を基準とする単位です。」
+
+          100vwで表示領域の横幅いっぱい（100%）に広がり、1vwで表示領域の1%の横幅になります。
+          画面に表示されているWebサイトの幅が例えば300pxであれば、「100vw＝300px」「1vw＝3px」となります。
+          メリット：親要素の影響を受けないため、大きさの計算がしやすい
+          デメリット：ビューポートの横幅にはスクロールバーが含まれるため、100vwを指定すると想定よりも幅が大きくなることがある
+
+          「vh Viewport Heightの略で、ビューポート（Webサイトの表示領域）の高さを基準とする単位です。」
+
+          100vhで表示領域の高さいっぱい（100%）に広がり、1vhで表示領域の1%の高さになります。
+
+          メリット：親要素の影響を受けないため、大きさの計算がしやすい
+          デメリット：スマートフォンにおけるアドレスバー（開いているページのURLなどが表示されている領域）の高さが考慮されないため、100vhを指定しても画面の高さいっぱいに表示されない（アドレスバーの高さ分下に押し出される）
+
+          太字を指定
+
+          font-weight: bold;
+
+          斜体を指定
+
+          font-family: "游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic";
+          font-style: italic;
+          フォントの種類によっては斜体にならないため、ここではfont-familyプロパティでフォントの種類を指定しています
+
+          行間を変える
+
+          line-height: 4.5;
+
+          文字の間隔を変える
+
+          letter-spacing: 1.5em;
+
+          値の指定にはフォントサイズと同じようにpxなどが使えますが、emを使うことで、フォントサイズに応じて相対的に字間が決まるのでおすすめです。
+
+          例えば値に1.5emを指定すれば、フォントサイズの1.5倍の字間になります。
+
+          文字に下線を引く
+
+          text-decoration: underline;
+
+          取り消し線を引く
+
+          text-decoration: line-through;
+
+          文字を枠線で囲む
+          {border: solid 3px red;}
+          solid=線の種類
+          3px=線の太さ
+          red=線の色
+
+          dotted=点線で囲む
+          dashed=破線で囲む
+          double=二重線で囲む
+          上にだけ線を引く=border-top
+          下にだけ線を引く=border-bottom
+          左にだけ線を引く=border-left
+          右にだけ線を引く=border-right
+          文字の背景色を指定する=background-color:
+          文字に影をつける=text-shadow: 1px 1px 2px gray;
+          1px=影の右方向の長さ 1px=影のした方向の長さ 2px=影のぼけ具合 gray=影の色
+          
+          文字の位置を変える text-align: 〇〇;
+          left=左揃え
+          center=中央揃え
+          right=右揃え
+
+          文字の一部だけ装飾する
+          <span>
+          使い方
+          <p>文字の<span class="text-bold">一部</span>だけ装飾する</p>
+
+          フォントの種類を指定する
+          body{
+               font-family: "Arial", "Meiryo", sans-serif;
+          }
+
+           基本的にfont-familyはWebページ全体の文字に対してまとめて適用するため、上記の例ではbody要素をセレクタに指定しています。
+          フォントファミリー名とは、「Arial」や「Meiryo（メイリオ）」などフォントの具体的な名前のことです。
+
+          font-familyプロパティに指定できる代表的な総称フォント名は以下のとおりです。
+
+           sans-serif（ゴシック体）
+          serif（明朝体）
+          cursive（筆記体）
+          fantasy（装飾体）
+          monospace（等幅）
+
+          優先したいフォントを先に書く
+          フォントを指定するときは、その順番にも注意が必要です。
+          font-familyプロパティでは、前に書かれたフォントが優先的に使われます。よって、優先的に表示させたいフォントを先に書くようにしましょう。
+
+          body {
+               font-family: "Meiryo", "Hiragino Kaku Gothic ProN";
+          }
+
+          英語フォントを先に書く
+          フォントには英語だけを表示できる英語フォントと、英語と日本語の両方を表示できる日本語フォントがあります。
+          英語フォントと日本語フォントを使い分けたい場合は、英語フォントを先に書くようにしましょう。
+
+         body {
+          font-family: "Meiryo", "Arial";
+          }
+
+          しかし、以下のように英語フォントであるArialを先に書けば、英語はArial、日本語はメイリオで表示されます。
+
+          body {
+           font-family: "Arial", "Meiryo";
+          }
+
+
+          最後に総称フォント名を書く
+          指定したフォントがすべて表示されなかった場合に備え、sans-serif（ゴシック体）やserif（明朝体）といった総称フォント名を最後に書くようにしましょう。
+          例えば以下のようにフォントを指定した場合、WindowsであればＭＳ Ｐゴシックが表示されますが、ＭＳ ＰゴシックがインストールされていないMacではsans-serif（ゴシック体）のフォントが表示されます。
+ 　
+          Cssファイル見本
+
+          body{
+               font-family: "MS Pゴシック", sans-serif;
+
+               
+          HTMLファイル見本
+
+          <!DOCTYPE html>
+           <html>
+                <head>
+                    <title>タイトルです</title>
+                    <meta name="description" content="説明文です">
+                    <meta charset="utf-8">
+                    <link rel="stylesheet" href="font-family.css">
+               </head>
+               <body>
+                    <p>Englishと日本語です</p>
+                    <p class="decoration">Englishと日本語です</p>
+               </body>
+          </html>
+
+
+          font-familyプロパティで指定するフォントはデバイスにインストールされていなければ表示されません。よって、複数指定するといった工夫が必要でした。
+          
+          この問題を解決する方法が他にもあります。それがWebフォントです。
+
+          Webフォントとは、インターネットのサーバー上に置かれたフォントのことです。
+
+          Webページを表示するときにインターネット上から呼び出して使うため、ユーザーのデバイスに依存しない（デバイスにそのフォントがインストールされていなくてもOK）という大きなメリットがあります。
+
+          ただしデメリットとして、利用料がかかる場合や表示速度が遅くなる場合があります。よって、Webフォントを利用するかどうかはWebサイトの制作を依頼したクライアント（依頼主）の意向次第となります
+
+          CSSファイル見本
+
+          .google-fonts {
+               ここにGoogleフォントを指定
+          }
+
+          Goolgleフォントの指定の仕方
+
+          ブラウザからGoogle fontsにアクセス
+          Languageを選択
+          指定したいフォントのソースコードをコピーして貼り付け
+
+          font-family: "Noto Sans JP", sans-serif;
+
+
+#second-paragraph {
+    padding: 100px;
+    border: solid 5px yellow;
+}
+
+
+
+content  文字や画像など、要素の中身が表示される領域
+コンテンツの大きさは、width（幅）height（高さ）
+
+
+border 　コンテンツの周辺にある境界線のこと、初期設定だとボーダーが0なので表示されない
+
+padding  ボーダーの内側の余白、大きさはpaddingで指定できる
+
+margin   ボーダーの外側の余白、大きさはmarginで指定できる
+
+余白の値を上→右→下→左の順で一度に指定する
+
+p{
+    padding: 20px 15px 10px 5px;
+    margin: 15px 10px 5px 0px;
+
+このように上記の順番で別々に指定できる。「上から時計周り」と覚える
+
+
+余白の値を上下に左右に分け指定する
+
+「上下の余白は20px」「左右の余白は10px」という感じで、上下と左右に分けて指定することもできる
+
+p{
+    padding: 20px 10px;
+    margin: 40px 20px;
+}
+
+
+上下左右の余白の一部だけを指定する
+
+上だけ指定する　padding-top    margin-top
+下だけ指定する  padding-bottom  margin-bottom
+左だけ指定する  padding-left   margin-left
+右だけ指定する  padding-right  margin-right
+
+
+marginのを利用して中央揃えにする
+
+p{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+上下に0、左右にautoを指定している
+p{
+    margin: 0 auto;
+}
+
+
+
+
+
+
+display 要素の表示形式（要素をどのように表示するか）
+
+displayプロパティの値
+
+block         要素が縦に並んでいく
+inline        要素が横に並んでいく
+inline-block  要素が横に並んでいくが、blockと同じような性質を持つ
+none          要素が非表示になる
+
+
+display: block;
+
+以下のような性質を持っている
+1.要素が縦に並んでいく
+2.width heightで幅と高さを指定できる
+3.padding margin上下左右に余白を指定できる
+
+#id-name {
+    width: 200px
+    background-color: yellow;
+}
+
+display: inline;
+
+以下のような性質を持っている
+1.要素が横に並んでいく
+2.幅と高さを指定できない
+3.左右の余白のみ調整できる　margin
+
+inlineの要素にpaddingを指定する時は左右だけにしておく（不具合でるらしい
+
+
+display: inline-block;
+
+1.要素が横に並んでいく
+2.width heightで幅と高さを調整できる
+3.padding marginで上下左右に余白を設定できる
+
+「要素が横に並んでいく」という以外はblockと同じような性質
+
+
+初期値がdisplay: block　であるp要素にdisplay: inline;
+を指定すれば、そのp要素はblockではなくinlineになる
+
+幅と高さを指定したinline-block
+#id-name {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: color-name
+}
+
+上下左右に余白を指定したinline
+
+#id-name {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    margin: 10px;
+    background-color: color-name
+}
+
+
+display none
+
+その要素は非表示になるもの
+どういった時に用いられるかというとレスポンシブデザインを作るとき
+つまり「PCではナビメニューを表示させて、スマホでは非表示にしたい」ときなどに用いられる
+
+#id-name{
+    display: none;
+    background-color: color-name;
+}

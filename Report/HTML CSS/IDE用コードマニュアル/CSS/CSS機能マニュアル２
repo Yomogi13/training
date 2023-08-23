@@ -1,0 +1,79 @@
+
+position
+
+「要素をどのように配置するか（要素の位置）」を決めるためのもの
+
+positionを使ってこんな事ができる
+
+1.スクロールしてもナビメニューを画面上部に固定する
+2.画像内のテキストを自由に配置する
+
+
+positionプロパティの値
+
+static      配置方法を指定しない（デフォ）
+relative    本来の表示位置を基準にした相対位置
+absolute    親要素を基準にした絶対位置
+fixed       画面を基準にした絶対位置
+
+上記のは配置方法で
+これに加え、具体的な値を指定しないといけない
+
+top     上から距離を指定する
+bottom  下から距離を指定する
+left    左からの距離を指定する
+right   右からの距離を指定する
+
+書き方
+
+#id-name {
+    position: relative;
+    top: 50px;
+    left: 50px;
+    }
+
+
+
+    position: relative;
+
+    本来の表示位置を基準にした相対位置に配置したいときに指定する
+
+    相対位置といわれる理由は、同じ値を指定しても「本来の表示位置」によって移動先の位置が相対的に変わるため
+    例えば同じようにtop: 50px left:50pxと指定しても、「本来の表示位置」によって移動先の位置は変わる
+
+    #id-name {
+        position: relative;
+        top: 50px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: color-name;
+    }
+
+
+    position: absolute
+
+    親要素を基準にした絶対位置に配置したいときに指定する
+    絶対位置とは「同じ値を指定すればどの要素であっても同じ場所に移動する」ということ
+
+    注意点としては、position: absoluteを指定する場合、「基準にしたい親要素にposition: relativeを指定しておく必要がある」
+
+    position: relativeを指定するのは必ずしも親要素である必要はなく、「親の親」「親の親の親」といった先祖要素で指定してもOK
+    この場合、position: relativeを指定した先祖要素が基準となる。
+
+
+    position: fixed
+
+    画面を基準にした絶対位置に配置したうえで、スクロールしても位置を固定したい時に指定する
+
+
+    書き方
+
+    .class-name {
+        position: fixed
+        bottom: 0;
+        left: 100px;
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+    }
