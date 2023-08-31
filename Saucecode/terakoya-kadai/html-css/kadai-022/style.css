@@ -1,0 +1,93 @@
+h1 {
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+p {
+    margin: 0;
+    font-size: 20px;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    font-size: 20px;
+    color: rgb(255,255,255);
+    text-align: center;
+}
+
+/* マウスカーソルが乗った時のスタイル */
+a:hover {
+    color: rgb(245, 178, 168);
+}
+
+/* 訪問済みのリンクのスタイル */
+a:visited {
+    color: rgb(193,234,251);
+}
+
+header {
+    margin-bottom: 20px;
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+
+main {
+    margin: 10px;
+}
+
+#parent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contents {
+    border: 3px solid rgb(238, 204, 204);
+    flex-basis: 25%;
+    padding: 10px 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* paddingは要素内 marginは要素外 */
+
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dashed rgb(236, 122, 122); 
+}
+
+h2::before {
+    content: "●";
+    color: rgb(239, 111, 139);
+}
+
+.contents p:nth-of-type(2)::first-letter {
+    font-size: 24px;
+    color: rgb(97, 206, 249);
+}
+
+img {
+    margin: 10px 0;
+    width: 70%;
+}
+
+footer {
+    background-color: rgb(244, 79, 79);
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+
+    #parent {
+        display: flex;
+        flex-direction: column;
+    }
+}
