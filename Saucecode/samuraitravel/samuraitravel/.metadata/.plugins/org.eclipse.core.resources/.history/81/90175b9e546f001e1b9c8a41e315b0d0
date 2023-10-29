@@ -1,0 +1,5 @@
+package com.example.samuraitravel.repository;
+
+public interface VerificationTokenRepository extends JpaRepository< VerificationToken, Integer> {
+    public VerificationToken findByToken(String token);
+}

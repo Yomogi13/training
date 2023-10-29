@@ -1,0 +1,10 @@
+package com.example.samuraitravel.security;
+
+public class UserDetailsServicelmpl implements UserDetailsService {
+	private final UserRepository userRepository;
+	
+	public UserDetailsService userRepository;
+	
+	public UserDetailsServiceImpl
+
+}

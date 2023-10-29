@@ -1,0 +1,14 @@
+package com.example.samuraitravel.event;
+
+public class SignupEvent extends ApplicationEvent {
+	private User user;
+	private String requestUrl;
+	
+	public SignEvent(Object source, User user, String requestUrl) {
+		super(source);
+		
+		this.user = user;
+		this.requestUrl = requestUrl;
+	}
+
+}
